@@ -1,5 +1,4 @@
 import { useState } from "react";
-import LoginRegisterBoard from "../LoginRegisterBoard/LoginRegisterBoard";
 import "./Register.css";
 
 function Register() {
@@ -12,6 +11,8 @@ function Register() {
     password:"",
     confirmPassword:""
   });
+  
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -30,7 +31,8 @@ function Register() {
     <div>
       <form id="register" onSubmit={handleSubmit}>
         <h2>Register</h2>
-        <LoginRegisterBoard></LoginRegisterBoard>
+        
+        <br/>
         <label>
           <input
             type="text"

@@ -1,6 +1,6 @@
 import "./Login.css";
 import {useState} from "react";
-import LoginRegisterBoard from "../LoginRegisterBoard/LoginRegisterBoard";
+//import LoginRegisterBoard from "../LoginRegisterBoard/LoginRegisterBoard";
 
 function Login()
 {
@@ -27,7 +27,7 @@ return (
   <div>
     <form id="login" onSubmit={handleSubmit}>
       <h2>Login</h2>
-      <LoginRegisterBoard></LoginRegisterBoard>
+      
       <label>
         <input
           type="text"
