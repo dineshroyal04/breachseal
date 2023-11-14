@@ -1,4 +1,5 @@
 import { useState } from "react";
+import LoginRegisterBoard from "../LoginRegisterBoard/LoginRegisterBoard";
 import "./Register.css";
 
 function Register() {
@@ -6,7 +7,10 @@ function Register() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: "",
+    companyName: "",
+    businessEmail: "",
+    password:"",
+    confirmPassword:""
   });
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,41 +28,82 @@ function Register() {
 
   return (
     <div>
-
-      {/* <h2>Register</h2> */}
-      
-      <form onSubmit={handleSubmit}>
+      <form id="register" onSubmit={handleSubmit}>
+        <h2>Register</h2>
+        <LoginRegisterBoard></LoginRegisterBoard>
         <label>
-          First Name:
           <input
             type="text"
             name="firstName"
+            placeholder="First Name*"
             value={formData.firstName}
             onChange={handleInputChange}
           />
         </label>
         <br />
+
         <label>
-          Last Name:
           <input
             type="text"
             name="lastName"
+            placeholder="Last Name*"
             value={formData.lastName}
             onChange={handleInputChange}
           />
         </label>
         <br />
+
         <label>
-          Email:
           <input
-            type="email"
-            name="email"
-            value={formData.email}
+            type="text"
+            name="companyName"
+            placeholder="Company Name*"
+            value={formData.companyName}
             onChange={handleInputChange}
           />
         </label>
         <br />
-        <button type="submit">Submit</button>
+
+        <label>
+          <input
+            type="email"
+            name="businessEmail"
+            placeholder="Business Email*"
+            value={formData.businessEmail}
+            onChange={handleInputChange}
+          />
+        </label>
+        <br />
+
+        <label>
+          <input
+            type="password"
+            name="password"
+            placeholder="password (minimum 8 charecters)*"
+            value={formData.password}
+            onChange={handleInputChange}
+          />
+        </label>
+        <br />
+        <label>
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password*"
+            value={formData.confirmPassword}
+            onChange={handleInputChange}
+          />
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" name="terms&conditions" />
+        </label>
+        <span>
+          I agree to the <a href="-">terms and conditions</a>
+        </span>
+        <br />
+
+        <button type="submit">Register</button>
       </form>
     </div>
   );

@@ -1,10 +1,27 @@
 import "./LoginRegisterBoard.css";
+import Login from "../Login/Login";
+import {useState} from "react";
 function LoginRegisterBoard(){
-return(
-    <div>
-        <h1 className="login">Login</h1>
-        <h1 className="register">Register</h1>
-    </div>
+
+    const[showLoginPage, setLoginPage]=useState(false);
+     
+    const handleLoginClick = ()=>{
+        setLoginPage(true);
+    }
+
+
+
+return (
+  <div>
+    {showLoginPage ? (
+      <button type="submit" onClick={handleLoginClick}>
+        Login
+      </button>
+    ):
+      (<Login></Login>)
+     }
+    <button type="submit">Register</button>
+  </div>
 );
 }
 export default LoginRegisterBoard;
